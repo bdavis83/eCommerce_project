@@ -14,7 +14,7 @@ header {
 }
 
 nav{
-    width:85%;
+    width:95%;
     border-bottom: 3px solid black;
     padding: .5em
 }
@@ -149,10 +149,29 @@ nav{
 }
 
 .about_container{
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-areas:
+          "text_one text_one"
+          "image_one  image_two"
+          "text_two  image_two"
+          "text_three  image_two";
+        grid-template-rows: 130px  30px;
+        grid-template-columns: 66% 1fr;
+
+      
+/*     display: grid;
+    width: 100%;
+    height: 900px
+    grid-template-areas: 
+        "text_one image_two"
+        "image_one  image_two"
+        "text_two  image_two";
     column-gap: 25px;
     row-gap: 25px;
+    grid-template-rows: 50px 1fr 30px;
+    grid-template-columns: 150px 1fr; */
     
 /*     display:flex;
     flex-direction: column;
@@ -166,10 +185,29 @@ nav{
     "a b c" */
 }
 
+.image_one {
+    grid-area: image_one;
+    margin-top: 4rem
+    
+}
+
+.image_one img{
+    grid-area: image_one;
+    margin-top: 4rem;
+   
+}
+
+.image_two {
+    grid-area: image_two;
+    
+}
 .image_two img{
+    grid-area: image_two;
+    display:  block;
     float: right;
     width: 400px;
-    height: 600px
+    height: auto
+    
 }
 
 .text_one{
@@ -179,25 +217,29 @@ nav{
     font-family:sans-serif;
     font-weight: 100;
     color: black;
+    grid-area: text_one;
+    
 
 }
 
 .text_two {
+    grid-area: text_two;
     font-family:sans-serif;
     font-weight: 100;
     color: black;
+    box-sizing: 50%;
+
 }
 
 .text_three {
+    grid-area: text_three;
+    grid-row: 200;
     font-family:sans-serif;
     font-weight: 100;
     color: black;
 }
 
-.image_one img{
-   float: left;
 
-}
 
 .our_products {
     width: 55%;
@@ -396,5 +438,5 @@ footer {
     font-family:sans-serif;
     font-weight: 100;
     font-size: 10pt;
-    margin-left: 22%;
+    margin-left: 13%;
 }
